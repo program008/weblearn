@@ -8,14 +8,19 @@
     <meta http-equiv="refresh" content="30">
     <!--定义标题左边的图标icon-->
     <link rel="shortcut icon" href="./img/logo.png">
+    <style type="text/css">
+        a {
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
 <a id="tips"></a>
 <h1 align="center">HTML BASIS</h1>
 <hr/>
 <br/>
-<a href="https://github.com/">
-    <img src="./img/login_1.png"/>
+<a href="https://github.com/program008/weblearn">
+    <img src="./img/login_1.png" align="center"/>
 </a>
 <br/>
 <p>这里来定义上标<sup>①</sup>，和定义下标<sub>②</sub></p>
@@ -35,17 +40,115 @@
 <p>My favorite color is
     <del>blue</del>
     <ins>red</ins>
-    !
 </p>
 
 <!--链接-->
 <a href="https://www.baidu.com/" target="_blank">百度一下</a>
-<br>
+<br><br><br>
 <!--页面右下角图标，当网页滚动到最后的时候，点击回到网页顶部-->
 <div style="position: fixed;bottom: 20px;right: 30px;">
     <a href="#tips"><img src="./img/pfeil_up.png" width="40" height="40"/></a>
 </div>
 
+<!--CSS修饰标签的样式，有 "内联" 和 "外引" 两种方式。
+对于大部分标签，以上两种方法均可，且修改父级标签，子级标签特性也会改变。
+但某些标签确无法通过修改父级标签来改变子级标签特性，如a标签，修改其颜色特性，
+必须直接修改 a 标签的特性才可。-->
+<a href="#" style="color:lightskyblue;" rel="nofollow">只能使用"内联"方式</a>
+<p>
+    一个动图：
+    <img src="./img/hackanm.gif" width="48" height="48" alt="computer man">
+</p>
 
+<!--创建图像映射-->
+<p>点击太阳或其他行星，注意变化：</p>
+
+<img src="planets.gif" width="145" height="126" alt="Planets" usemap="#planetmap">
+
+<map name="planetmap">
+    <area shape="rect" coords="0,0,82,126" alt="Sun" href="sun.htm">
+    <area shape="circle" coords="90,58,3" alt="Mercury" href="mercur.htm">
+    <area shape="circle" coords="124,58,8" alt="Venus" href="venus.htm">
+</map>
+<br/>
+<br/>
+<p>各种分割线</p>
+<hr style=" height:2px;border:none;border-top:2px dotted #185598;"/>
+<hr style="height:1px;border:none;border-top:1px dashed #0066CC;"/>
+<hr style="height:3px;border:none;border-top:3px double red;"/>
+<hr style="height:5px;border:none;border-top:5px ridge green;"/>
+<hr style="height:10px;border:none;border-top:10px groove skyblue;"/>
+
+<p>表格</p>
+<iframe width="100%" height="300" src="https://c.runoob.com/iframe/3187" allowfullscreen="allowfullscreen"
+        frameborder="0"></iframe>
+<br/>
+<br/>
+<br/>
+<!--布局-->
+<p>布局</p>
+<div id="container" style="width:500px">
+
+    <div id="header" style="background-color:#FFA500;">
+        <h1 style="margin-bottom:0;">主要的网页标题</h1>
+    </div>
+
+    <div id="menu" style="background-color:#FFD700;height:200px;width:100px;float:left;">
+        <b>菜单</b><br>
+        HTML<br>
+        CSS<br>
+        JavaScript
+    </div>
+
+    <div id="content" style="background-color:#EEEEEE;height:200px;width:400px;float:left;">
+        内容在这里
+    </div>
+
+    <div id="footer" style="background-color:#FFA500;clear:both;text-align:center;">
+        版权 © runoob.com
+    </div>
+
+</div>
+
+<br/>
+<!--表单-->
+<p>表单</p>
+<form action="">
+    <fieldset>
+        <legend>Personal information:</legend>
+        Name: <input type="text" size="30"><br>
+        E-mail: <input type="text" size="30"><br>
+        Date of birth: <input type="text" size="10">
+    </fieldset>
+</form>
+
+<form action="demo-form.php" method="get">
+    <input type="checkbox" name="vehicle[]" value="Bike"> I have a bike<br>
+    <input type="checkbox" name="vehicle[]" value="Car" checked="checked"> I have a car<br>
+    <input type="submit" value="提交">
+</form>
+
+<form action="demo-form.php" method="get">
+    <input type="radio" name="sex" value="Male"> Male<br>
+    <input type="radio" name="sex" value="Female" checked="checked"> Female<br>
+    <input type="submit" value="提交">
+</form>
+
+<form>
+    <p>你生活在哪个国家？</p>
+    <input type="radio" name="country" value="China" checked="checked">中国<br />
+    <input type="radio" name="country" value="the USA">美国
+</form>
+<br/>
+<br/>
+<hr style=" height:2px;border:none;border-top:2px dotted #185598;"/>
+<!--HTML框架-->
+<iframe src="./html/html-iframes.html" width="600px" height="500px" frameborder="1" name="iframe-a">
+    <p>您的浏览器不支持  iframe 标签。</p>
+</iframe>
+<hr style=" height:2px;border:none;border-top:2px dotted #185598;"/>
+<a href="http://www.runoob.com" target="iframe-a">点一下</a>
+<p><b>注意：</b> 因为 a 标签的 target 属性是名为 iframe_a 的 iframe 框架，所以在点击链接时页面会显示在 iframe框架中。</p>
+<br/>
 </body>
 </html>
